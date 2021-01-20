@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcCore.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index Departamentos";
+}
+
+<h1>Index Departamentos</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Departamentos">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Localidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Localidad)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Departamentos", new { numdepar = item.Numero }) |
+                @Html.ActionLink("Details", "Details", "Departamentos", new { numdepar = item.Numero }) |
+                @Html.ActionLink("Delete", "Delete", "Departamentos", new { numdepar = item.Numero })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

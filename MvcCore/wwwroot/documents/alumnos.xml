@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<alumnos>
+  <alumno>
+    <idalumno>1</idalumno>
+    <nombre>Nacho</nombre>
+    <apellidos>Shum Llanos</apellidos>
+    <nota>8</nota>
+  </alumno>
+  <alumno>
+    <idalumno>2</idalumno>
+    <nombre>Jose Maria</nombre>
+    <apellidos>Gutierrez</apellidos>
+    <nota>10</nota>
+  </alumno>
+  <alumno>
+    <idalumno>3</idalumno>
+    <nombre>Fran</nombre>
+    <apellidos>Pescao</apellidos>
+    <nota>10</nota>
+  </alumno>
+  <alumno>
+    <idalumno>4</idalumno>
+    <nombre>Lucia</nombre>
+    <apellidos>Ramos Serrano</apellidos>
+    <nota>8</nota>
+  </alumno>
+  <alumno>
+    <idalumno>5</idalumno>
+    <nombre>Oscar</nombre>
+    <apellidos>Garcia Ronaldo</apellidos>
+    <nota>6</nota>
+  </alumno>
+  <alumno>
+    <idalumno>6</idalumno>
+    <nombre>Adrian</nombre>
+    <apellidos>Ramos Zidane</apellidos>
+    <nota>10</nota>
+  </alumno>
+  <alumno>
+    <idalumno>7</idalumno>
+    <nombre>Carlos</nombre>
+    <apellidos>Tormo Sanchez</apellidos>
+    <nota>4</nota>
+  </alumno>
+  <alumno>
+    <idalumno>9</idalumno>
+    <nombre>Pedro</nombre>
+    <apellidos>Casales</apellidos>
+    <nota>7</nota>
+  </alumno>
+</alumnos>

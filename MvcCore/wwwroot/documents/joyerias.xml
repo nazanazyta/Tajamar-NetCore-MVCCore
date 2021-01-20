@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<joyerias>
+	<joyeria cif="A45854741">
+		<nombrejoyeria>Diamantina</nombrejoyeria> 
+		<direccion>Velazquez</direccion> 
+		<telf>913297458</telf> 
+	</joyeria>
+	<joyeria cif="A45874586">
+		<nombrejoyeria>Nilo</nombrejoyeria> 
+		<direccion>Goya,10</direccion> 
+		<telf>917101244</telf> 
+	</joyeria>
+	<joyeria cif="B12589874">
+		<nombrejoyeria>Todojoya</nombrejoyeria> 
+		<direccion>Serrano,147</direccion> 
+		<telf>914788552</telf> 
+	</joyeria>
+</joyerias>

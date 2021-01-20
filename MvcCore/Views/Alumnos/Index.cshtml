@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcCore.Models.Alumno>
+
+@{
+    ViewData["Title"] = "Index Alumnos";
+}
+
+<h1>Index Alumnos</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Alumnos">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Alumnos", new { idalumno = item.IdAlumno }) |
+                @Html.ActionLink("Details", "Details", "Alumnos", new { idalumno = item.IdAlumno }) |
+                @Html.ActionLink("Delete", "Delete", "Alumnos", new { idalumno = item.IdAlumno })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
