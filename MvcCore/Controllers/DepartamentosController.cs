@@ -10,9 +10,9 @@ namespace MvcCore.Controllers
 {
     public class DepartamentosController : Controller
     {
-        RepositoryDepartamentos repo;
+        IRepositoryDepartamentos repo;
 
-        public DepartamentosController(RepositoryDepartamentos repo)
+        public DepartamentosController(IRepositoryDepartamentos repo)
         {
             this.repo = repo;
         }

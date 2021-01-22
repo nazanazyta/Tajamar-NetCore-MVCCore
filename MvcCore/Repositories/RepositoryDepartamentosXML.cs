@@ -8,13 +8,13 @@ using System.Xml.Linq;
 
 namespace MvcCore.Repositories
 {
-    public class RepositoryDepartamentos
+    public class RepositoryDepartamentosXML: IRepositoryDepartamentos
     {
         PathProvider pathprovider;
         private XDocument docxml;
         private String path;
 
-        public RepositoryDepartamentos(PathProvider pathprovider)
+        public RepositoryDepartamentosXML(PathProvider pathprovider)
         {
             this.pathprovider = pathprovider;
             this.path = this.pathprovider.MapPath("departamentos.xml", Folders.Documents);
