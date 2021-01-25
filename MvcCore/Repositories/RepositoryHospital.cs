@@ -63,6 +63,7 @@ namespace MvcCore.Repositories
 
         public List<Empleado> BuscarEmpleadosDepartamentos(List<int> iddepartamentos)
         {
+            //select * from emp where dept_no in(10,20,30)
             var consulta = from datos in this.context.Empleados
                            where iddepartamentos.Contains(datos.Departamento)
                            select datos;
