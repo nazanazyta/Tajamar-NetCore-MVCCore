@@ -50,6 +50,7 @@ namespace MvcCore.Repositories
             return consulta.FirstOrDefault();
         }
 
+        //MÉTODO PRIVADO PARA ELIMINAR Y MODIFICAR
         private XElement GetXElementDepartamento(int numdepar)
         {
             var consulta = from datos in this.docxml.Descendants("DEPARTAMENTO")

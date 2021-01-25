@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace MvcCore.Data
 {
-    public class DepartamentosContext: DbContext
+    public class HospitalContext: DbContext
     {
-        public DepartamentosContext(DbContextOptions<DepartamentosContext> options)
+        public HospitalContext(DbContextOptions<HospitalContext> options)
             : base(options) { }
 
         public DbSet<Departamento> Departamentos { get; set; }
+        public DbSet<Empleado> Empleados { get; set; }
     }
 }

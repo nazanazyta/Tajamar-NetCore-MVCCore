@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace MvcCore.Repositories
 {
-    public class RepositoryDepartamentosSQL: IRepositoryDepartamentos
+    public class RepositoryHospital : IRepositoryHospital
     {
         HospitalContext context;
 
-        public RepositoryDepartamentosSQL(HospitalContext context)
+        public RepositoryHospital(HospitalContext context)
         {
             this.context = context;
         }
 
+        #region TABLA DEPARTAMENTOS
         public List<Departamento> GetDepartamentos()
         {
             var consulta = from datos in this.context.Departamentos
@@ -52,5 +53,21 @@ namespace MvcCore.Repositories
             depar.Localidad = loc;
             this.context.SaveChanges();
         }
+        #endregion
+
+        #region TABLA EMPLEADOS
+        public List<Empleado> GetEmpleados()
+        {
+            return this.context.Empleados.ToList();
+        }
+
+        public List<Empleado> BuscarEmpleadosDepartamentos(List<int> iddepartamentos)
+        {
+            var consulta = from datos in this.context.Empleados
+                           where iddepartamentos.Contains(datos.Departamento)
+                           select datos;
+            return consulta.ToList();
+        }
+        #endregion
     }
 }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using MvcCore.Data;
 using MvcCore.Helpers;
 using MvcCore.Repositories;
+//using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace MvcCore
 {
@@ -30,16 +31,21 @@ namespace MvcCore
         {
             String cadenasql = this.Configuration.GetConnectionString("casasqlhospital");
             String cadenaoracle = this.Configuration.GetConnectionString("casaoraclehospital");
+            String cadenamysql = this.Configuration.GetConnectionString("casamysqlhospital");
             services.AddTransient<PathProvider>();
             services.AddTransient<RepositoryJoyerias>();
             services.AddTransient<RepositoryAlumnos>();
             //services.AddTransient<RepositoryDepartamentosXML>();
             //services.AddTransient<IRepositoryDepartamentos, RepositoryDepartamentosXML>();
             //services.AddTransient<IRepositoryDepartamentos, RepositoryDepartamentosSQL>();
-            services.AddTransient<IRepositoryDepartamentos>(x =>
-                new RepositoryDepartamentosOracle(cadenaoracle));
-            //services.AddDbContext<DepartamentosContext>(options => options.UseSqlServer(cadenasql));
-            services.AddDbContext<DepartamentosContext>(options => options.UseSqlServer(cadenaoracle));
+            //services.AddTransient<IRepositoryDepartamentos, RepositoryDepartamentosMySql>();
+            //services.AddTransient<IRepositoryDepartamentos>(x =>
+            //    new RepositoryDepartamentosOracle(cadenaoracle));
+            services.AddTransient<IRepositoryHospital, RepositoryHospital>();
+            services.AddDbContext<HospitalContext>(options => options.UseSqlServer(cadenasql));
+            //services.AddDbContext<HospitalContext>(options => options.UseSqlServer(cadenaoracle));
+            //services.AddDbContext<HospitalContext>(options => options.UseMySql(cadenamysql, new MySqlServerVersion(new Version(8, 0, 22)), mySqlOptions => mySqlOptions.CharSetBehavior(CharSetBehavior.NeverAppend)));
+            //services.AddDbContextPool<HospitalContext>(options => options.UseMySql(cadenamysql, ServerVersion.AutoDetect(cadenamysql)));
             services.AddControllersWithViews();
         }
 

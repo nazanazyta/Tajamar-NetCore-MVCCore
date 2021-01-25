@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xZgjl1RZZHNyhWwR/LXKHScE9GOGD0SuUY/IJCz3TOfpJO0lugP15b4oyM/4tsueAUs0brNBTfaTGR4QaIJGCw==",
+  "dgSpecHash": "15/zcx+ce1OGXPu5GBnHvX/GUfDWQYgj8qGfFnuygyMzi7DLtfzLkxJGZBd7wzL7LuD9AOHdoEY1AljgvF4vgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj",
   "expectedPackageFiles": [
@@ -50,10 +50,12 @@
     "C:\\Users\\Nazaret\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Nazaret\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Nazaret\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Nazaret\\.nuget\\packages\\mysqlconnector\\1.1.0\\mysqlconnector.1.1.0.nupkg.sha512",
     "C:\\Users\\Nazaret\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Nazaret\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Nazaret\\.nuget\\packages\\oracle.manageddataaccess.core\\2.19.101\\oracle.manageddataaccess.core.2.19.101.nupkg.sha512",
+    "C:\\Users\\Nazaret\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\5.0.0-alpha.2\\pomelo.entityframeworkcore.mysql.5.0.0-alpha.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
