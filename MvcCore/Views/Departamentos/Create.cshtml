@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Numero" class="control-label"></label>
@@ -26,6 +26,11 @@
                 <label asp-for="Localidad" class="control-label"></label>
                 <input asp-for="Localidad" class="form-control" />
                 <span asp-validation-for="Localidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Seleccione imagen: </label>
+                @* No se mapea *@
+                <input type="file" class="form-control-file" name="ficheroimagen" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

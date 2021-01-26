@@ -32,6 +32,7 @@ namespace MvcCore
             String cadenasql = this.Configuration.GetConnectionString("casasqlhospital");
             String cadenaoracle = this.Configuration.GetConnectionString("casaoraclehospital");
             String cadenamysql = this.Configuration.GetConnectionString("casamysqlhospital");
+            String cadenasqlazure = this.Configuration.GetConnectionString("azuresql");
             services.AddTransient<PathProvider>();
             services.AddTransient<RepositoryJoyerias>();
             services.AddTransient<RepositoryAlumnos>();
@@ -43,6 +44,7 @@ namespace MvcCore
             //    new RepositoryDepartamentosOracle(cadenaoracle));
             services.AddTransient<IRepositoryHospital, RepositoryHospital>();
             services.AddDbContext<HospitalContext>(options => options.UseSqlServer(cadenasql));
+            //services.AddDbContext<HospitalContext>(options => options.UseSqlServer(cadenasqlazure));
             //services.AddDbContext<HospitalContext>(options => options.UseSqlServer(cadenaoracle));
             //services.AddDbContext<HospitalContext>(options => options.UseMySql(cadenamysql, new MySqlServerVersion(new Version(8, 0, 22)), mySqlOptions => mySqlOptions.CharSetBehavior(CharSetBehavior.NeverAppend)));
             //services.AddDbContextPool<HospitalContext>(options => options.UseMySql(cadenamysql, ServerVersion.AutoDetect(cadenamysql)));

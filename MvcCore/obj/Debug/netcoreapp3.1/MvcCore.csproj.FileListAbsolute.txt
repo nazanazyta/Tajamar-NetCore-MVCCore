@@ -190,5 +190,6 @@ C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\bin\Debug\netcoreapp3.1\r
 C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\bin\Debug\netcoreapp3.1\Oracle.ManagedDataAccess.dll
 C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\MvcCore.csprojAssemblyReference.cache
 C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\Departamentos\SeleccionMultiple.cshtml.g.cs
+C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\Home\SubirFichero.cshtml.g.cs
+C:\Users\Nazaret\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\MvcCore.csprojAssemblyReference.cache

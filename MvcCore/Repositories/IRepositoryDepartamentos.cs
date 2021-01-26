@@ -16,6 +16,10 @@ namespace MvcCore.Repositories
 
         void ModificarDepartamento(int numdepar, String nombre, String loc);
 
+        void ModificarDepartamento(int numdepar, String nombre, String loc, String img);
+
         void InsertarDepartamento(int numdepar, String nombre, String loc);
+
+        void InsertarDepartamento(int deptno, String nombre, String loc, String imagen);
     }
 }

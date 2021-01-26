@@ -94,5 +94,15 @@ namespace MvcCore.Repositories
             this.docxml.Element("DEPARTAMENTOS").Add(eldepar);
             this.docxml.Save(this.path);
         }
+
+        public void InsertarDepartamento(int deptno, string nombre, string loc, string imagen)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ModificarDepartamento(int numdepar, string nombre, string loc, string img)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
