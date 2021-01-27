@@ -25,15 +25,17 @@ namespace MvcCore
             this.Configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             String cadenasql = this.Configuration.GetConnectionString("casasqlhospital");
             String cadenaoracle = this.Configuration.GetConnectionString("casaoraclehospital");
             String cadenamysql = this.Configuration.GetConnectionString("casamysqlhospital");
             String cadenasqlazure = this.Configuration.GetConnectionString("azuresql");
-            services.AddTransient<PathProvider>();
+
+            services.AddSingleton<IConfiguration>(this.Configuration);
+            services.AddSingleton<UploadService>();
+            services.AddSingleton<MailService>();
+            services.AddSingleton<PathProvider>();
             services.AddTransient<RepositoryJoyerias>();
             services.AddTransient<RepositoryAlumnos>();
             //services.AddTransient<RepositoryDepartamentosXML>();
@@ -51,7 +53,6 @@ namespace MvcCore
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
