@@ -25,10 +25,10 @@ namespace MvcCore.Helpers
             , String mensaje)
         {
             MailMessage mail = new MailMessage();
-            String usermail = this.Configuration["usuariomail"];
+            String usermail = this.Configuration["correogmailprueba"];
             //String usermail = this.Configuration["usumailproyecto"];
-            String passwordmail = this.Configuration["passwordmail"];
-            //String passwordmail = this.Configuration["passmailproyecto"];s
+            String passwordmail = this.Configuration["passgmailprueba"];
+            //String passwordmail = this.Configuration["passmailproyecto"];
             mail.From = new MailAddress(usermail);
             mail.To.Add(new MailAddress(receptor));
             mail.Subject = asunto;
@@ -53,9 +53,9 @@ namespace MvcCore.Helpers
             , String mensaje, String filepath)
         {
             MailMessage mail = new MailMessage();
-            String usermail = this.Configuration["usuariomail"];
+            String usermail = this.Configuration["correogmailprueba"];
             //String usermail = this.Configuration["usumailproyecto"];
-            String passwordmail = this.Configuration["passwordmail"];
+            String passwordmail = this.Configuration["passgmailprueba"];
             //String passwordmail = this.Configuration["passmailproyecto"];
             mail.From = new MailAddress(usermail);
             mail.To.Add(new MailAddress(receptor));

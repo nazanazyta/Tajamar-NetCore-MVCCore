@@ -38,6 +38,7 @@ namespace MvcCore
             services.AddSingleton<PathProvider>();
             services.AddTransient<RepositoryJoyerias>();
             services.AddTransient<RepositoryAlumnos>();
+            services.AddTransient<RepositoryUsuarios>();
             //services.AddTransient<RepositoryDepartamentosXML>();
             //services.AddTransient<IRepositoryDepartamentos, RepositoryDepartamentosXML>();
             //services.AddTransient<IRepositoryDepartamentos, RepositoryDepartamentosSQL>();

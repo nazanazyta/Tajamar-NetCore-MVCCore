@@ -46,43 +46,6 @@ namespace MvcCore.Controllers
             }
             ViewData["mensaje"] = "Mensaje enviado";
             return View();
-            //MailMessage mail = new MailMessage();
-            ////String usermail = this.Configuration["usuariomail"];
-            ////String passwordmail = this.Configuration["passwordmail"];
-            //String usermail = this.Configuration["usumailproyecto"];
-            //String passwordmail = this.Configuration["passmailproyecto"];
-            //mail.From = new MailAddress(usermail);
-            //mail.To.Add(new MailAddress(receptor));
-            //mail.Subject = asunto;
-            //mail.Body = mensaje;
-            //mail.IsBodyHtml = true;
-            //mail.Priority = MailPriority.Normal;
-            //if (fichero != null)
-            //{
-            //    String path = this.UploadService.UploadFile(fichero).Result;
-            //    //String filename = fichero.FileName;
-            //    //String path = this.PathProvider.MapPath(filename, Folders.Temporal);
-            //    //using (var stream = new FileStream(path, FileMode.Create))
-            //    //{
-            //    //    await fichero.CopyToAsync(stream);
-            //    //}
-            //    Attachment attachment = new Attachment(path);
-            //    mail.Attachments.Add(attachment);
-            //}
-            //String smtpserver = this.Configuration["host"];
-            //int port = int.Parse(this.Configuration["port"]);
-            //bool ssl = bool.Parse(this.Configuration["ssl"]);
-            //bool defaultcredentials = bool.Parse(this.Configuration["defaultcredentials"]);
-            //SmtpClient smtpClient = new SmtpClient();
-            //smtpClient.Host = smtpserver;
-            //smtpClient.Port = port;
-            //smtpClient.EnableSsl = ssl;
-            //smtpClient.UseDefaultCredentials = defaultcredentials;
-            //NetworkCredential usercredential = new NetworkCredential(usermail, passwordmail);
-            //smtpClient.Credentials = usercredential;
-            //smtpClient.Send(mail);
-            //ViewData["mensaje"] = "Mensaje enviado";
-            //return View();
         }
 
         public IActionResult Index()
@@ -101,14 +64,6 @@ namespace MvcCore.Controllers
             await this.UploadService.UploadFileAsync(fichero, Folders.Images);
             ViewData["mensaje"] = "Archivo subido";
             return View();
-            //String filename = fichero.FileName;
-            //String path = this.PathProvider.MapPath(filename, Folders.Images);
-            //using (var stream = new FileStream(path, FileMode.Create))
-            //{
-            //    await fichero.CopyToAsync(stream);
-            //}
-            //ViewData["mensaje"] = "Archivo subido: " + path;
-            //return View();
         }
 
         public IActionResult CifradoHash()
@@ -119,25 +74,7 @@ namespace MvcCore.Controllers
         [HttpPost]
         public IActionResult CifradoHash(String contenido, String resultado, String accion)
         {
-            //PRIMERO EN BRUTO Y LUEGO HACEMOS INYECCIÓN DE LO NECESARIO
-            //NECESITAMOS TRABAJAR A NIVEL DE byte[]
-            //DEBEMOS CONVERTIR A byte[] EL CONTENIDO DE ENTRADA
-            byte[] entrada;
-            //EL CIFRADO SE REALIZA A NIVEL DE byte[]
-            //Y DEVOLVERÁ OTRO byte[] DE SALIDA
-            byte[] salida;
-            //NECESITAMOS UN CONVERSOR PARA TRANSFORMAR byte[]
-            //A String Y VICEVERSA
-            UnicodeEncoding encoding = new UnicodeEncoding();
-            //NECESITAMOS EL OBJETO QUE SE ENCARGARÁ
-            //DE REALIZAR EL CIFRADO -> using System.Security.Cryptography;
-            SHA1Managed sha = new SHA1Managed();
-            //DEBEMOS CONVERTIR EL CONTENIDO DE ENTRADA A byte[]
-            entrada = encoding.GetBytes(contenido);
-            //EL OBJETO SHA1Managed TIENE UN MÉOTOD
-            //PARA DEVOLVER LOS byte[] DE SALIDA REALIZANDO EL CIFRADO
-            salida = sha.ComputeHash(entrada);
-            String res = encoding.GetString(salida);
+            String res = CypherService.EncriptarTextoBasico(contenido);
             //SOLAMENTE SI ESCRIBIMOS EL MISMO CONTENIDO
             //TENDRÍAMOS LA MISMA SECUENCIA DE SALIDA
             if (accion.ToLower() == "cifrar")
@@ -155,6 +92,33 @@ namespace MvcCore.Controllers
                 else
                 {
                     ViewData["mensaje"] = "<h1 style='color: blue'>Iguales</h1>";
+                }
+            }
+            return View();
+        }
+
+        public IActionResult CifradoHashEficiente()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CifradoHashEficiente(String contenido, int iteraciones
+            , String salt, String resultado,  String accion)
+        {
+            String cifrado = CypherService.CifrarContenido(contenido, iteraciones, salt);
+            if (accion.ToLower() == "cifrar")
+            {
+                ViewData["resultado"] = cifrado;
+            }else if (accion.ToLower() == "comparar")
+            {
+                if (resultado == cifrado)
+                {
+                    ViewData["mensaje"] = "<h1 style='color: blue'>Son iguales!!</h1>";
+                }
+                else
+                {
+                    ViewData["mensaje"] = "<h1 style='color: red'>Diferentes</h1>";
                 }
             }
             return View();
