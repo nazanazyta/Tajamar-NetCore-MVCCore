@@ -33,9 +33,18 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Usuarios" asp-action="Index">Usuarios cifrado</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="HoraSistema" asp-controller="Caching">Caching Hora sistema</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="HoraSistemaDistribuida" asp-controller="Caching">Caching Distribuido</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ejemplos</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item"
+                           asp-controller="EmpleadosSession"
+                           asp-action="AlmacenarEmpleados">Session Empleados</a>
                         <a class="dropdown-item"
                            asp-controller="Joyerias"
                            asp-action="Index">Joyerías XML</a>

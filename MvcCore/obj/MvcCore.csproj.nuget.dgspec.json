@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj": {}
+    "G:\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj": {
+    "G:\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj",
+        "projectUniqueName": "G:\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj",
         "projectName": "MvcCore",
-        "projectPath": "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj",
-        "packagesPath": "C:\\Users\\Nazaret\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nazaret\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\obj\\",
+        "projectPath": "G:\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\MvcCore.csproj",
+        "packagesPath": "C:\\Users\\Naza\\.nuget\\packages\\",
+        "outputPath": "G:\\Repos\\Tajamar-NetCore-MVCCore\\MvcCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nazaret\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Naza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -44,6 +44,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.ResponseCaching": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -52,9 +60,17 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Oracle.ManagedDataAccess.Core": {
               "target": "Package",

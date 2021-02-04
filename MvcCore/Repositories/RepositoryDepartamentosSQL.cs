@@ -18,9 +18,10 @@ namespace MvcCore.Repositories
 
         public List<Departamento> GetDepartamentos()
         {
-            var consulta = from datos in this.context.Departamentos
-                           select datos;
-            return consulta.ToList();
+            //var consulta = from datos in this.context.Departamentos
+            //               select datos;
+            //return consulta.ToList();
+            return this.context.Departamentos.ToList();
         }
 
         public Departamento BuscarDepartamento(int numdepar)

@@ -1,0 +1,11 @@
+﻿<h1>Hora Sistema Caching</h1>
+
+<a asp-action="HoraSistema" asp-controller="Caching">Actualizar página</a>
+
+<a asp-action="HoraSistema" asp-controller="Caching" asp-route-tiempo="15">Caché de 15 segundos</a>
+
+<a asp-action="HoraSistema" asp-controller="Caching" asp-route-tiempo="30">Caché de 30 segundos</a>
+
+<h1 style="color: blue">@ViewData["fecha"]</h1>
+
+<h1 style="color: red">@ViewData["mensaje"]</h1>

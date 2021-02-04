@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MvcCore.Models.Persona>
+
+@{
+    ViewData["Title"] = "AlmacenarMultipleSession";
+}
+
+<h1>AlmacenarMultipleSession</h1>
+
+<h2 style="color: red">@ViewData["mensaje"]</h2>
+
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">
+        <a asp-action="AlmacenarMultipleSession"
+           asp-controller="Home"
+           asp-route-accion="almacenar">Almacenar Múltiple Session</a>
+    </li>
+    <li class="list-group-item">
+        <a asp-action="AlmacenarMultipleSession"
+           asp-controller="Home"
+           asp-route-accion="mostrar">Mostrar Múltiple Session</a>
+    </li>
+</ul>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Edad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

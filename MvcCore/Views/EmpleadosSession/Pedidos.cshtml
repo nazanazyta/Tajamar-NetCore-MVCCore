@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MvcCore.Models.Empleado>
+@* Aquí traeríamos un modelo Pedido *@
+
+@{
+    ViewData["Title"] = "Pedidos";
+    List<int> cantidades = ViewData["cantidades"] as List<int>;
+    int contador = 0;
+}
+
+<h1>Pedidos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oficio)
+            </th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oficio)
+            </td>
+            <td style="color: red">@cantidades[contador]</td>
+            @{contador++;}
+        </tr>
+}
+    </tbody>
+</table>

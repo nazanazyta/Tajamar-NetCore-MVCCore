@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MvcCore.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Almacenar Empleados";
+    List<int> empsession = Context.Session.GetObject<List<int>>("empleados");
+}
+
+<h1>Almacenar Empleados Session</h1>
+<h2 style="color: rebeccapurple">@ViewData["mensaje"]</h2>
+<p>
+    <a asp-action="MostrarEmpleados" asp-controller="EmpleadosSession">Mostrar Session</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oficio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oficio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento)
+            </td>
+            <td>
+                @if (empsession == null)
+                {
+                    //PINTAMOS ALMACENAR
+                    <a asp-controller="EmpleadosSession"
+                       asp-action="AlmacenarEmpleados"
+                       asp-route-idemp="@item.IdEmpleado">Almacenar</a>
+                }
+                else if (!empsession.Contains(item.IdEmpleado))
+                {
+                    //PINTAMOS ALMACENAR
+                    <a asp-controller="EmpleadosSession"
+                       asp-action="AlmacenarEmpleados"
+                       asp-route-idemp="@item.IdEmpleado">Almacenar</a>
+                }
+                else
+                {
+                    //EXISTE LA SESSION
+                    <span>Añadido</span>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

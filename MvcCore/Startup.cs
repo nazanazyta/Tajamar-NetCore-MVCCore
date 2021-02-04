@@ -27,6 +27,18 @@ namespace MvcCore
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //CACHÉ
+            services.AddMemoryCache();
+
+            services.AddResponseCaching();
+
+            //SESSION
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
+
             String cadenasql = this.Configuration.GetConnectionString("casasqlhospital");
             String cadenaoracle = this.Configuration.GetConnectionString("casaoraclehospital");
             String cadenamysql = this.Configuration.GetConnectionString("casamysqlhospital");
@@ -62,8 +74,9 @@ namespace MvcCore
             }
 
             app.UseRouting();
-
             app.UseStaticFiles();
+            app.UseResponseCaching();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
