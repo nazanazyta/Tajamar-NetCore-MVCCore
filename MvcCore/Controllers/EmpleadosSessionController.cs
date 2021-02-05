@@ -75,16 +75,22 @@ namespace MvcCore.Controllers
             //ARROYO 7499 DEBE ESTAR EN POSICIÓN 1, 1
             List<int> empsession = HttpContext.Session.GetObject<List<int>>("empleados");
             List<Empleado> empleados = this.Repo.GetEmpleadosSession(empsession);
-            TempData["empleados"] = JsonConvert.SerializeObject(empleados);
-            TempData["cantidades"] = JsonConvert.SerializeObject(cantidades);
+            //TempData["empleados"] = JsonConvert.SerializeObject(empleados);
+            TempData.SetObjectTempData("empleados", empleados);
+            //TempData["cantidades"] = JsonConvert.SerializeObject(cantidades);
+            TempData.SetObjectTempData("cantidades", cantidades);
             return RedirectToAction("Pedidos");
         }
 
         public IActionResult Pedidos()
         {
             //return View();
-            ViewData["cantidades"] = JsonConvert.DeserializeObject<List<int>>((string)TempData["cantidades"]);
-            return View(JsonConvert.DeserializeObject<List<Empleado>>((string)TempData["empleados"]));
+            List<int> cantidades = TempData.GetObjectTempData<List<int>>("cantidades");
+            List<Empleado> empleados = TempData.GetObjectTempData<List<Empleado>>("empleados");
+            ViewData["cantidades"] = cantidades;
+            return View(empleados);
+            //ViewData["cantidades"] = JsonConvert.DeserializeObject<List<int>>((string)TempData["cantidades"]);
+            //return View(JsonConvert.DeserializeObject<List<Empleado>>((string)TempData["empleados"]));
         }
 
         //[HttpPost]

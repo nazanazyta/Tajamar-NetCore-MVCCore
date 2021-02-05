@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using MvcCore.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +12,24 @@ namespace MvcCore.Extensions
     public static class TempDataExtension
     {
         public static void SetObjectTempData
-            (this ISession session, String key, object value)
+            (this ITempDataDictionary tempdata, String key, Object objeto)
         {
-            String data = HelperToolKit.SerializeJsonObject(value);
-            session.SetString(key, data);
+            tempdata[key] = JsonConvert.SerializeObject(objeto);
+            //String data = HelperToolKit.SerializeJsonObject(objeto);
+            //tempdata.SetObjectTempData(key, data);
         }
 
-        public static T GetObjectTempData<T>(this ISession session, String key)
+        public static T GetObjectTempData<T>(this ITempDataDictionary tempdata, String key)
         {
-            String data = session.GetString(key);
-            if (data == null)
+            if (tempdata[key] == null)
             {
                 return default(T);
             }
-            return HelperToolKit.DeserializeJsonObject<T>(data);
+            else
+            {
+                String data = tempdata[key].ToString();
+                return JsonConvert.DeserializeObject<T>(data);
+            }
         }
     }
 }
