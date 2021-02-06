@@ -373,3 +373,4 @@ G:\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\Cac
 G:\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\EmpleadosSession\AlmacenarEmpleados.cshtml.g.cs
 G:\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\EmpleadosSession\MostrarEmpleados.cshtml.g.cs
 G:\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\EmpleadosSession\Pedidos.cshtml.g.cs
+G:\Repos\Tajamar-NetCore-MVCCore\MvcCore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CarritoEmpleados.cshtml.g.cs

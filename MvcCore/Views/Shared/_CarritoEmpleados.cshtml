@@ -1,0 +1,14 @@
+﻿@{
+    List<int> empleados = Context.Session.GetObject<List<int>>("empleados");
+    int total = 0;
+}
+
+@if (empleados != null)
+{
+    @foreach (int emp in empleados)
+    {
+        total++;
+    }
+
+    <button class="btn btn-success">@total</button>
+}
